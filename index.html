@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip calculator!</title>
+    <style>
+        *{
+            font-family: cursive;
+            text-align: center;
+            font-size: 20px;
+        }
+        h1{
+            font-size:30px;
+            text-align: center;
+        }
+        #div1{
+            font-size: 25px;
+        }
+        #king{
+            width:400px;
+            height: 550px;
+            border: 2px solid black;
+            border-radius: 25px;
+            padding-left: ;
+           
+        }
+        #padding{
+            padding-left: 450px;
+            padding-top:40px
+        }
+        #amount{
+            cursor: text;
+        }
+    </style>
+</head>
+<body>
+    <div id="padding">
+    <div id="king">
+    <h1>Tip calculator</h1>
+    
+    <div id="div1">
+    <p>How much was your bill?</p>
+    
+    <input type="number" placeholder="Enter amount" id="amount"><span>$</span>
+    <br>
+    <p>Tip%</p>
+    <input type="number" id="tip" placeholder="enter percentage">%
+    <br>
+    <br>
+    <p>Number of people:</p>
+    <input type="number" id="people" placeholder="Number of people to share">
+     <br>
+     <br>
+    <button type="button" onclick="myfunction()">Calculate</button>
+    <br>
+    
+    <p id="space"></p>
+    
+</div>
+</div>
+</div>
+</body>
+<script>
+//declaring variables and getting the HTML elements
+  let x = 0;
+    var y = document.getElementById("tip");
+    var z = document.getElementById("amount");
+    let space = document.getElementById("space");
+    let people = document.getElementById("people");
+    let total = document.getElementById("t");
+// calling the function "myfunction()" the function is called when the button is clicked and (as mentioned in the body of the document)
+   function myfunction(){
+   //applying the math for calculating the tip
+       x = y.value*z.value/100;
+       let j = people.value;
+     let am = x/j;
+     
+     //conditions for displaying the tip .
+     if(j === 0){
+           space.innerHTML = " ";
+       }
+    if(j<0){
+        space.innerHTML = "cannot calaculate";
+    }
+    else{
+        space.innerHTML = "Tip per person: " + am+"$";
+    }
+
+       
+   }
+   // end of the javascript code.
+
+</script>
+</html>
